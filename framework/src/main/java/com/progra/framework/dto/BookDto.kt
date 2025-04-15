@@ -8,7 +8,7 @@ class BookDto(
     @Json(name= "author_name")
     val authors: List<String>,
     @Json(name= "first_publish_year")
-    val yearPublis: Int,
+    val yearPublish: Int,
     @Json(name= "title")
     val title: String
 )
