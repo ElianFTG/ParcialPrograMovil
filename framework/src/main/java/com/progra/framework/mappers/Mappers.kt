@@ -8,7 +8,7 @@ import com.progra.framework.persistence.BookBD
 fun Book.toEntity(): BookBD {
     return BookBD(
         title = title,
-        authors = authors.joinToString(","),
+        authors = authors,
         yearPublish = yearPublish
     )
 }
@@ -16,7 +16,7 @@ fun Book.toEntity(): BookBD {
 fun BookBD.toModel(): Book {
     return Book(
         title,
-        authors.split(","),
+        authors,
         yearPublish
     )
 }

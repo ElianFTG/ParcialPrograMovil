@@ -13,11 +13,10 @@ class BookRepository(
     }
 
     suspend fun save(book: Book): Boolean {
-        this.localDataSource.save(book)
-        return true
+        return this.localDataSource.save(book)
     }
 
     suspend fun getAllBooksLike(): List<Book>{
-        return localDataSource.getAllBooksLike()
+        return this.localDataSource.getAllBooksLike()
     }
 }

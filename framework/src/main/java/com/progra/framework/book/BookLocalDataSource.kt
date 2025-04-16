@@ -11,11 +11,11 @@ import com.progra.framework.persistence.IBookDAO
 class BookLocalDataSource(val context: Context) : ILocalDataSource {
     val bookDAO : IBookDAO = AppRoomDatabase.getDatabase(context).bookDao()
     override suspend fun save(book: Book): Boolean {
-        bookDAO.insert(book.toEntity())
+        this.bookDAO.insert(book.toEntity())
         return true
     }
 
     override suspend fun getAllBooksLike(): List<Book> {
-        return bookDAO.getBooks().map { it.toModel() }
+        return this.bookDAO.getBooks().map { it.toModel() }
     }
 }

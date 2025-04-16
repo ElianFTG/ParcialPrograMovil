@@ -8,14 +8,15 @@ import androidx.room.PrimaryKey
 
 @Entity ( tableName = "books")
 data class BookBD(
+    @PrimaryKey(autoGenerate = true)
+    @ColumnInfo(name = "id")
+    var id: Long = 0,
     @ColumnInfo(name = "title")
     var title: String,
     @ColumnInfo(name = "yearPublish")
     var yearPublish : Int,
-    @ColumnInfo(name = "yearPublish")
-    var authors : String
+    @ColumnInfo(name = "authors")
+    var authors : List<String>
 ) {
-    @PrimaryKey(autoGenerate = true)
-    @ColumnInfo(name = "id")
-    var id: Long = 0
+
 }

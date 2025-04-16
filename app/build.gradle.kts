@@ -2,6 +2,10 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
+    alias(libs.plugins.kapt)
+    alias(libs.plugins.hilt)
+    alias(libs.plugins.kotlinSerialization)
+
 }
 
 android {
@@ -56,4 +60,25 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
+    implementation(libs.androidx.lifecycle.viewmodel.compose)
+    implementation(libs.androidx.runtime.livedata)
+    debugImplementation(libs.leakcanary.android)
+    implementation(libs.navigation)
+    implementation(libs.hilt.navigation)
+    implementation(libs.kotlinx.coroutines.core) // Para Flow
+    implementation(libs.coil)
+    implementation(libs.hilt)
+    kapt(libs.hilt.compiler)
+    androidTestImplementation(libs.hilt.test)
+    kaptAndroidTest(libs.hilt.compiler)
+
+    //serialization
+    implementation(libs.kotlinx.serialization.json)
+
+    implementation(libs.firebase.messaging)
+
+    implementation(project(":usecases"))
+    implementation(project(":domain"))
+    implementation(project(":data"))
+    implementation(project(":framework"))
 }
